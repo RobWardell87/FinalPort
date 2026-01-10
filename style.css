@@ -26,6 +26,7 @@ button {
 
 section {
     background-color: rgb(245, 245, 245);
+    transition: all 300ms ease;
 }
 
 input, textarea {
@@ -64,7 +65,6 @@ input:focus, textarea:focus {
     padding: 50px 0;
     width: 100%;
     outline: none;
-    border: 1px solid #f06449;
 }
 
 .row {
@@ -125,6 +125,55 @@ input:focus, textarea:focus {
 left: 0;
 width: 100%;
 }
+
+nav,
+.scroll,
+.header {
+    opacity: 1;
+    visibility: visible;
+    transition: all 600ms 800ms;
+}
+.modal--open nav,
+.modal--open .scroll,
+.modal--open .header {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 400ms;
+}
+
+.dark-theme .title,
+.dark-theme .section__title,
+.dark-theme .section__sub-title,
+.dark-theme .nav__link--anchor,
+.dark-theme .fa-circle-half-stroke,
+.dark-theme .header__para 
+{
+    color: white;
+}
+
+.dark-theme section {
+    background-color: #151515;
+}
+
+.dark-theme .scroll__icon {
+    border-color: #f06449;
+}
+
+.dark-theme .scroll__icon:after,
+.dark-theme .link__hover-effect--black:after {
+    background-color: #f06449;
+}
+
+.dark-theme .mail__btn {
+    background-color: #f06449;
+    color: #151515;
+}
+
+.dark-theme .social__link {
+    background-color: #f06449;
+    color: #151515;
+}
+
 
 /* LANDING PAGE */
 
@@ -249,7 +298,7 @@ nav {
     text-decoration: none;
     font-size: 16px;
     color: #242424;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .fa-solid {
@@ -265,11 +314,19 @@ nav {
     transform: translate(-50%, -50%);
     width: 90%;
     max-width: 1100px;
-    height: 700px;
-    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
+    height: 500px;
     border-radius: 20px;
     overflow: hidden;
     display: flex;
+    visibility: hidden;
+    z-index: -1;
+    transition: visibility 1s, z-index 1s, box-shadow 0.5s ease;
+}
+
+.modal--open .modal{
+    z-index: 60;
+    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
+    visibility: visible;
 }
 
 .modal__half {
@@ -279,11 +336,17 @@ nav {
     flex-direction: column;
     justify-content: center;
     position: relative;
+    transition: all 300ms ease;
+}
+
+.modal--open .modal__about, 
+.modal--open .modal__contact {
+    transform: translateX(0%);
 }
 
 .modal__about {
     background-color: rgb(245, 245, 245);
-    
+    transform: translateX(-110%);
 }
 
 .modal__languages {
@@ -324,6 +387,7 @@ transform: scale(1);
 .modal__contact {
     background-color: #151515;
     color: white;
+    transform: translateX(110%);
 }
 
 .modal__title {
@@ -385,7 +449,7 @@ transform: scale(1);
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     z-index: -1;
@@ -399,7 +463,7 @@ transform: scale(1);
 .modal__overlay--success {
     background-color: #4bb543;
     font-size: 40px;
-    font-weight: 700;
+    font-weight: 500;
     text-align: center;
     padding: 28px;
     line-height: 1.5;
@@ -407,6 +471,7 @@ transform: scale(1);
 
 .modal__overlay--visible {
     z-index: 1;
+    display: flex;
 }
 
 .fa-spinner {
@@ -528,8 +593,8 @@ footer {
 }
 
 .footer__logo--img {
-    width: 70px;
-    height:  70px;
+    width: 50px;
+    height:  50px;
     border: 2px solid #f06449;
     border-radius: 20px;
 }
@@ -547,3 +612,62 @@ footer {
     color: #f06449;
     text-align: center;
 }
+
+/* Shapes */  
+
+/* SHAPES ON THE FIRST ROW'S HEIGHT = 15VH */
+
+/* SHAPES ON THE SECOND ROW'S HEIGHT = 50VH */
+
+/* SHAPES ON THE THIRD ROW'S HEIGHT = 80VH */
+
+/* SHAPES ON THE FIRST COLOUMN'S ROW WIDTH = 5VW */
+
+/* SHAPES ON THE SECOND COLOUMN'S ROW WIDTH = 50VW */
+
+/* SHAPES ON THE THIRD COLOUMN'S ROW WIDTH = 80VW */
+
+.shape {
+    position: fixed;
+}
+
+.shape--0 {
+    top: 15vh;
+    left: 5vw;
+}
+.shape--1 {
+    top: 15vh;
+    left: 50vw;
+}
+.shape--2 {
+    top: 15vh;
+    left: 80vw;
+}
+.shape--3 {
+    top: 50vh;
+    left: 5vw;
+}
+.shape--4 {
+    top: 50vh;
+    left: 50vw;
+}
+.shape--5 {
+    top: 50vh;
+    left: 80vw;
+}
+.shape--6 {
+    top: 80vh;
+    left: 5vw;
+}
+.shape--7 {
+    top: 80vh;
+    left: 50vw;
+}
+.shape--8 {
+    top: 80vh;
+    left: 80vw;
+}
+
+
+
+
