@@ -308,13 +308,13 @@ nav {
 /* MODAL */
 
 .modal {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
     max-width: 1100px;
-    height: 500px;
+    height: 700px;
     border-radius: 20px;
     overflow: hidden;
     display: flex;
@@ -521,7 +521,7 @@ transform: scale(1);
     border-radius: 20px;
     box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.45);
     overflow: hidden;
-    margin-bottom: 64px;
+    margin-bottom: 80px;
 }
 
 .project__wrapper:hover .project__description {
@@ -629,6 +629,7 @@ footer {
 
 .shape {
     position: fixed;
+    opacity: 0.25;
 }
 
 .shape--0 {
